@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -19,38 +20,68 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative pt-32 pb-24 md:pt-44 md:pb-32 overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section 
+      id="home" 
+      className="relative pt-32 pb-24 md:pt-44 md:pb-40 overflow-hidden bg-cover bg-center h-screen flex items-center"
+    >
+      {/* Video di sfondo */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        className="absolute w-full h-full object-cover z-0 top-0 left-0"
+        style={{ filter: 'brightness(0.6)' }}
+      >
+        <source src="/images/magna.mp4" type="video/mp4" />
+      </video>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center" ref={heroRef}>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Design. Build. <span className="text-blue-600">Launch.</span><br />
-            Everything you need in one place.
+          <div className="mb-6 inline-block">
+            <img 
+              src="/images/NEOM-sustainable-urban-living-project-logo.webp" 
+              alt="NEOM Logo" 
+              className="h-16 md:h-20 mx-auto mb-4"
+            />
+          </div>
+          <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight text-white">
+            Italia per <span className="text-green-400">NEOM</span><br />
+            <span className="text-2xl md:text-3xl mt-2 inline-block">Eccellenza Italiana per la Città del Futuro</span>
           </h1>
-          <p className="text-slate-600 text-xl md:text-2xl mb-10 max-w-2xl mx-auto">
-            A powerful platform for designers and developers to collaborate, 
-            create, and deploy beautiful products faster than ever before.
+          <p className="text-white text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+            Un innovativo sistema di aggregazione che valorizza l'eccellenza italiana
+            nel contesto del rivoluzionario progetto urbano che 
+            definirà gli standard delle città del futuro.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a 
-              href="#features" 
-              className="bg-slate-900 text-white px-8 py-3 rounded-full hover:bg-slate-800 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center w-full sm:w-auto"
+            <Link 
+              to="/our-offer" 
+              className="bg-green-600 text-white px-8 py-4 rounded-full hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center w-full sm:w-auto text-lg shadow-lg"
             >
-              Explore Features
+              La Nostra Offerta
               <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-            <a 
-              href="#demo" 
-              className="border-2 border-slate-300 text-slate-700 px-8 py-3 rounded-full hover:border-slate-500 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center w-full sm:w-auto"
+            </Link>
+            <Link 
+              to="/neom-project" 
+              className="bg-slate-800 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center w-full sm:w-auto text-lg shadow-lg"
             >
-              Watch Demo
-            </a>
+              Scopri NEOM
+              <ExternalLink className="ml-2 h-5 w-5" />
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Background decorative elements */}
-      <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-100 rounded-full opacity-50 blur-3xl"></div>
-      <div className="absolute top-1/2 -right-32 w-96 h-96 bg-indigo-100 rounded-full opacity-40 blur-3xl"></div>
+      {/* Overlay scuro per migliorare la leggibilità */}
+      <div className="absolute inset-0 bg-black opacity-30 z-1"></div>
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20">
+        <span className="text-white/70 text-sm mb-2">Scorri per scoprire</span>
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1.5 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
     </section>
   );
 };

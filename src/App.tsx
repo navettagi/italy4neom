@@ -1,27 +1,25 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import BusinessModel from './components/BusinessModel';
-import MarketAnalysis from './components/MarketAnalysis';
-import Contact from './components/Contact';
-import Newsletter from './components/Newsletter';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import NEOMProject from './pages/NEOMProject';
+import MarketAnalysis from './pages/MarketAnalysis';
+import OurOffer from './pages/OurOffer';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800">
-      <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <BusinessModel />
-        <MarketAnalysis />
-        <Contact />
-        <Newsletter />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/neom-project" element={<NEOMProject />} />
+          <Route path="/market-analysis" element={<MarketAnalysis />} />
+          <Route path="/our-offer" element={<OurOffer />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 

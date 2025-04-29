@@ -1,158 +1,239 @@
 import React from 'react';
-import { Building2, Ship, Droplet, Factory, Sun, LineChart, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { 
+  Building2, Ship, Droplet, Factory, Sun, 
+  LineChart, AlertTriangle, CheckCircle2,
+  Train, Lightbulb, Leaf, Building,
+  Map, Timer, BarChart3
+} from 'lucide-react';
 
 const MarketAnalysis: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-20 right-0 w-72 h-72 bg-blue-100 rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute bottom-20 left-0 w-96 h-96 bg-indigo-100 rounded-full opacity-20 blur-3xl"></div>
-      </div>
-
+    <section id="neom" className="py-20 bg-cover bg-center relative overflow-hidden" 
+      style={{ 
+        backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.95)), url("/images/jaumur-NEOM.jpg")'
+      }}
+    >
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">Investigazione e Analisi del Mercato NEOM</h1>
-
-          <div className="mb-16">
-            <h2 className="text-2xl font-semibold mb-6">Stato Attuale dei Progetti NEOM</h2>
-            <p className="text-slate-600 mb-8">
-              La nostra analisi approfondita dello stato attuale di NEOM rivela un quadro di significativo 
-              avanzamento, pur con alcune revisioni strategiche rispetto alla visione iniziale.
+          <h1 className="text-4xl font-bold mb-4 text-center">NEOM: Un Progetto Visionario</h1>
+          
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-semibold mb-4">La Visione di NEOM</h2>
+            <p className="text-slate-700 text-lg">
+              NEOM rappresenta una delle iniziative di sviluppo urbano più ambiziose a livello globale, 
+              posizionandosi come elemento centrale della <strong>Vision 2030</strong> dell'Arabia Saudita. 
+              Questo megaprogetto non è semplicemente un'iniziativa di costruzione, ma un progetto di 
+              trasformazione nazionale che mira a posizionare l'Arabia Saudita come leader globale in 
+              settori innovativi e sostenibili.
             </p>
+          </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-                <h3 className="font-semibold mb-4">The Line</h3>
-                <ul className="space-y-2 text-slate-600 text-sm">
+          <div className="mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Gli Obiettivi di NEOM</h2>
+                <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    Scavi estesi e lavori di fondazione
+                    <Leaf className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                    <span>Creare un ambiente urbano a <strong>zero emissioni di carbonio</strong></span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    Costruzione dei moduli iniziali
+                    <Sun className="h-5 w-5 text-amber-500 mr-3 mt-1 flex-shrink-0" />
+                    <span>Sviluppare un ecosistema completamente alimentato da <strong>energia rinnovabile</strong></span>
+                  </li>
+                  <li className="flex items-start">
+                    <Lightbulb className="h-5 w-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
+                    <span>Implementare un elevato livello di <strong>integrazione tecnologica</strong></span>
+                  </li>
+                  <li className="flex items-start">
+                    <Building className="h-5 w-5 text-indigo-500 mr-3 mt-1 flex-shrink-0" />
+                    <span>Promuovere un design urbano innovativo con enfasi sulla <strong>vivibilità</strong></span>
                   </li>
                 </ul>
               </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-                <h3 className="font-semibold mb-4">Oxagon</h3>
-                <ul className="space-y-2 text-slate-600 text-sm">
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    Espansione del porto
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    Insediamento aziende industriali
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-                <h3 className="font-semibold mb-4">Trojena</h3>
-                <ul className="space-y-2 text-slate-600 text-sm">
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    Preparazione Giochi Asiatici 2029
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    Sviluppo infrastrutture montane
-                  </li>
-                </ul>
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src="/images/neom-port-business-hero-v5.webp" 
+                  alt="NEOM Vision" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
 
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold mb-6">Opportunità Concrete per il Consorzio Italiano</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-                <Building2 className="h-8 w-8 text-blue-500 mb-4" />
-                <h3 className="font-semibold mb-3">Settore Ferroviario</h3>
-                <p className="text-slate-600 text-sm">
-                  Competenze italiane nella progettazione e costruzione di linee ferroviarie ad alta velocità.
-                </p>
+            <h2 className="text-2xl font-semibold mb-8 text-center">Le Regioni Principali di NEOM</h2>
+            
+            <div className="space-y-10">
+              <div className="grid md:grid-cols-3 gap-6 md:gap-10">
+                <div className="col-span-1 md:col-span-1">
+                  <img 
+                    src="/images/171476-7fb9b341ab19951aa61d3ae8c2fa7798.jpg" 
+                    alt="The Line" 
+                    className="w-full h-48 object-cover rounded-lg shadow-md"
+                  />
+                </div>
+                <div className="col-span-2 md:col-span-2">
+                  <h3 className="text-xl font-semibold mb-3">The Line</h3>
+                  <p className="text-slate-700 mb-4">
+                    Una rivoluzionaria città lineare che si estenderà per 170 chilometri, concepita come uno spazio urbano senza auto, strade o emissioni di carbonio. The Line è progettata per ospitare fino a 9 milioni di residenti in un ambiente che privilegia la qualità della vita.
+                  </p>
+                  <div className="bg-blue-50 p-3 rounded-lg border border-blue-100">
+                    <p className="text-sm text-slate-700">
+                      <strong>Stato attuale:</strong> Significativi progressi sono stati compiuti nello sviluppo di The Line. Sono in corso lavori di scavo e di fondazione, con la costruzione dei moduli iniziali in fase avanzata.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-                <Ship className="h-8 w-8 text-indigo-500 mb-4" />
-                <h3 className="font-semibold mb-3">Sviluppo Portuale</h3>
-                <p className="text-slate-600 text-sm">
-                  Expertise consolidata nello sviluppo e gestione di infrastrutture portuali avanzate.
-                </p>
+              <div className="grid md:grid-cols-3 gap-6 md:gap-10">
+                <div className="col-span-1 md:col-span-1 order-1 md:order-2">
+                  <img 
+                    src="/images/hero-port-image.jpg" 
+                    alt="Oxagon" 
+                    className="w-full h-48 object-cover rounded-lg shadow-md"
+                  />
+                </div>
+                <div className="col-span-2 md:col-span-2 order-2 md:order-1">
+                  <h3 className="text-xl font-semibold mb-3">Oxagon</h3>
+                  <p className="text-slate-700 mb-4">
+                    Un polo industriale e portuale concepito come hub per industrie avanzate e pulite, che include una struttura parzialmente galleggiante. Oxagon mira a ridefinire il concetto di città industriale con un approccio sostenibile e innovativo.
+                  </p>
+                  <div className="bg-purple-50 p-3 rounded-lg border border-purple-100">
+                    <p className="text-sm text-slate-700">
+                      <strong>Stato attuale:</strong> Lo sviluppo di Oxagon sta procedendo rapidamente. Il porto di NEOM è in fase di espansione e importanti aziende industriali si sono stabilite nella zona, inclusa la NEOM Green Hydrogen Company.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-                <Droplet className="h-8 w-8 text-cyan-500 mb-4" />
-                <h3 className="font-semibold mb-3">Tecnologie di Desalinizzazione</h3>
-                <p className="text-slate-600 text-sm">
-                  Impianti di desalinizzazione innovativi e sostenibili.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-                <Factory className="h-8 w-8 text-green-500 mb-4" />
-                <h3 className="font-semibold mb-3">Costruzioni Sostenibili</h3>
-                <p className="text-slate-600 text-sm">
-                  Materiali e tecniche di costruzione sostenibili.
-                </p>
+              <div className="grid md:grid-cols-3 gap-6 md:gap-10">
+                <div className="col-span-1 md:col-span-1">
+                  <img 
+                    src="/images/NEOM_announces_Treyam_destination.jpg" 
+                    alt="Trojena" 
+                    className="w-full h-48 object-cover rounded-lg shadow-md"
+                  />
+                </div>
+                <div className="col-span-2 md:col-span-2">
+                  <h3 className="text-xl font-semibold mb-3">Trojena</h3>
+                  <p className="text-slate-700 mb-4">
+                    Una destinazione turistica montana che offrirà attività outdoor durante tutto l'anno, incluse strutture per sport invernali, in una regione dove le temperature invernali possono scendere sotto lo zero.
+                  </p>
+                  <div className="bg-green-50 p-3 rounded-lg border border-green-100">
+                    <p className="text-sm text-slate-700">
+                      <strong>Stato attuale:</strong> Sono in corso significativi lavori di costruzione, con scavi per tunnel, installazione di strutture in acciaio per il villaggio sciistico e sviluppo delle infrastrutture di base in preparazione per i Giochi Asiatici Invernali del 2029.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold mb-6">Panorama Competitivo e Tender</h2>
-            <div className="bg-white p-8 rounded-2xl shadow-md">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="font-semibold mb-4">Competitori Internazionali</h3>
-                  <ul className="space-y-2 text-slate-600">
-                    <li>Stati Uniti</li>
-                    <li>Cina</li>
-                    <li>Corea del Sud</li>
-                    <li>Germania</li>
-                    <li>Francia</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-4">Vantaggi Competitivi Italiani</h3>
-                  <ul className="space-y-2 text-slate-600">
-                    <li>Eccellenza nel design e ingegneria</li>
-                    <li>Esperienza in ambienti complessi</li>
-                    <li>Equilibrio qualità-costi</li>
-                    <li>Approccio flessibile</li>
-                  </ul>
+            <h2 className="text-2xl font-semibold mb-6 text-center">Esigenze Infrastrutturali di NEOM</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+                <h3 className="font-semibold mb-4 flex items-center">
+                  <Train className="h-6 w-6 text-blue-500 mr-2" />
+                  Trasporti
+                </h3>
+                <ul className="space-y-2 text-slate-700 ml-8 list-disc">
+                  <li>Linee ferroviarie ad alta velocità (The Spine e Connector)</li>
+                  <li>Implementazione di veicoli autonomi</li>
+                  <li>Sviluppo di strade, porti e aeroporti</li>
+                  <li>Soluzioni di mobilità acquatica come traghetti e taxi acquei</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+                <h3 className="font-semibold mb-4 flex items-center">
+                  <Sun className="h-6 w-6 text-amber-500 mr-2" />
+                  Utilities
+                </h3>
+                <ul className="space-y-2 text-slate-700 ml-8 list-disc">
+                  <li>Sistema energetico completamente integrato e alimentato al 100% da fonti rinnovabili</li>
+                  <li>Forte focus su energia solare, eolica e idrogeno verde</li>
+                  <li>Infrastrutture idriche sostenibili basate sulla desalinizzazione</li>
+                  <li>Approccio di economia circolare per il trattamento delle acque reflue</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+                <h3 className="font-semibold mb-4 flex items-center">
+                  <Building2 className="h-6 w-6 text-green-500 mr-2" />
+                  Edilizia e Costruzioni
+                </h3>
+                <ul className="space-y-2 text-slate-700 ml-8 list-disc">
+                  <li>Grattacieli specchiati di The Line</li>
+                  <li>Resort di lusso a Sindalah e Trojena</li>
+                  <li>Impianti industriali di Oxagon</li>
+                  <li>Enorme domanda di materiali da costruzione avanzati</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border border-slate-100">
+                <h3 className="font-semibold mb-4 flex items-center">
+                  <Map className="h-6 w-6 text-indigo-500 mr-2" />
+                  Smart Cities
+                </h3>
+                <ul className="space-y-2 text-slate-700 ml-8 list-disc">
+                  <li>Sistemi di gestione urbana integrati</li>
+                  <li>Reti di sensori e IoT per monitoraggio in tempo reale</li>
+                  <li>Soluzioni digitali per gestione traffico, energia e rifiuti</li>
+                  <li>Piattaforme di servizi digitali per i residenti</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-6 text-center">Sfide e Opportunità</h2>
+            <div className="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="md:w-1/2 bg-gradient-to-br from-slate-700 to-slate-900 text-white p-8">
+                <h3 className="font-semibold mb-4 flex items-center">
+                  <AlertTriangle className="h-6 w-6 text-yellow-400 mr-2" />
+                  Sfide
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <Timer className="h-5 w-5 text-yellow-400 mr-2 mt-1" />
+                    <span><strong>Limitazioni finanziarie:</strong> Revisioni di budget e potenziali riduzioni delle ambizioni iniziali</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Map className="h-5 w-5 text-yellow-400 mr-2 mt-1" />
+                    <span><strong>Complessità logistiche:</strong> Realizzazione in ambiente desertico remoto</span>
+                  </li>
+                  <li className="flex items-start">
+                    <BarChart3 className="h-5 w-5 text-yellow-400 mr-2 mt-1" />
+                    <span><strong>Sfide tecniche:</strong> Implementazione di soluzioni innovative</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="md:w-1/2 p-8">
+                <h3 className="font-semibold mb-4 flex items-center">
+                  <Lightbulb className="h-6 w-6 text-blue-500 mr-2" />
+                  Opportunità
+                </h3>
+                <p className="text-slate-700 mb-4">
+                  Queste sfide rappresentano opportunità concrete per aziende con competenze specializzate e capacità di innovazione, particolarmente per un consorzio italiano capace di offrire soluzioni integrate di alta qualità.
+                </p>
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <p className="text-sm italic text-slate-700 text-center">
+                    "NEOM: Costruire oggi la città del futuro"
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div>
-            <h2 className="text-2xl font-semibold mb-6">Fattibilità e Prospettive</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl">
-                <CheckCircle2 className="h-8 w-8 text-green-500 mb-4" />
-                <h3 className="font-semibold mb-3">Fattori Positivi</h3>
-                <ul className="space-y-2 text-slate-600 text-sm">
-                  <li>Forte impegno strategico saudita</li>
-                  <li>Integrazione Vision 2030</li>
-                  <li>Progressi tangibili realizzati</li>
-                </ul>
-              </div>
-
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl">
-                <AlertTriangle className="h-8 w-8 text-amber-500 mb-4" />
-                <h3 className="font-semibold mb-3">Potenziali Criticità</h3>
-                <ul className="space-y-2 text-slate-600 text-sm">
-                  <li>Revisioni di budget e scala</li>
-                  <li>Complessità logistiche</li>
-                  <li>Sfide di sostenibilità</li>
-                </ul>
-              </div>
-            </div>
+          <div className="text-center mt-16">
+            <img 
+              src="/images/NEOM-Green-Hydrogen-Company,-wind-turbine-delivery_2.jpg" 
+              alt="NEOM Green Hydrogen" 
+              className="w-full h-64 object-cover rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </div>
